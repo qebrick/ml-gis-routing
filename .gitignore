@@ -1,6 +1,6 @@
 data/raw/
 .idea/
-__pycache__/
+!__pycache__/
 *.py[cod]
 .venv/
 .env
