@@ -1,0 +1,42 @@
+{
+  "dataset": "Porto OSMnx directed drive graph",
+  "heldout_od_count": 600,
+  "heldout_sha256": "d93bc12a37bb62b8a22a4fae55a6c5bd3bd863aa1a705f4b413cd47204d14b1e",
+  "distance_bins": {
+    "short": 200,
+    "medium": 200,
+    "long": 200
+  },
+  "benchmark_repeats": 3,
+  "strategies": [
+    "alt2",
+    "alt4",
+    "distance_gate",
+    "ml_tree"
+  ],
+  "sampling_seed": 20261016,
+  "bootstrap_seed": 42,
+  "bootstrap_iterations": 5000,
+  "bootstrap_cluster": "destination",
+  "training_od_count": 142,
+  "distance_gate_threshold_m": 2914.709,
+  "ml_tree_depth": 2,
+  "ml_tree_threshold_saved_expansions": 25,
+  "ml_tree_training_data": "original 142 GPS OD only",
+  "test_set_used_for_tuning": false,
+  "notes": [
+    "Synthetic OD balanced across three geographic-distance bins",
+    "All 600 OD lie in the largest strongly connected component",
+    "Three repeats measure timing variability, not new OD samples",
+    "ALT preprocessing excluded from per-query timing",
+    "Reported inference costs depend on Python/NumPy implementation",
+    "All 2400 strategy-route combinations verified against Dijkstra"
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "networkx": "3.7",
+    "scikit_learn": "1.9.1"
+  }
+}

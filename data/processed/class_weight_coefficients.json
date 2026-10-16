@@ -1,0 +1,12 @@
+{
+  "lambda": 100.0,
+  "training_routes": 511,
+  "coefficients": {
+    "motorway": 1.2125410281380844,
+    "primary": 1.2884594956326783,
+    "secondary": 1.262238391997488,
+    "tertiary": 1.1543766533647457,
+    "residential": 0.9304567548339409,
+    "other": 1.0
+  }
+}
