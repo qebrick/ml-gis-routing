@@ -1,0 +1,2261 @@
+{
+  "initial_head": "865f32a4414a04d22983091f9b647f1bdade7dfc",
+  "keep_source": [
+    "src/__init__.py",
+    "src/data/__init__.py",
+    "src/data/check_hmm_interval_quality.py",
+    "src/data/clean_map_matching.py",
+    "src/data/download_graph.py",
+    "src/data/extract_hmm_routes.py",
+    "src/data/fix_segments.py",
+    "src/data/hmm_map_matching.py",
+    "src/data/map_matching_pilot.py",
+    "src/data/prepare_trajectories.py",
+    "src/ml/__init__.py",
+    "src/ml/build_distance_based_routes.py",
+    "src/ml/detect_hmm_backtracking.py",
+    "src/ml/prepare_interval_training_data.py",
+    "src/ml/prepare_road_class_time_features.py",
+    "src/ml/validate_conservative_refit.py",
+    "src/ml/validate_osm_intervals.py",
+    "src/routing/__init__.py",
+    "src/routing/analyze_alt_ml_opportunity.py",
+    "src/routing/analyze_alt_presearch_features.py",
+    "src/routing/analyze_porto_alt_workload.py",
+    "src/routing/analyze_porto_heldout_alt.py",
+    "src/routing/audit_porto_alt_robustness.py",
+    "src/routing/benchmark_adaptive_alt_end_to_end.py",
+    "src/routing/benchmark_adaptive_alt_k.py",
+    "src/routing/benchmark_adaptive_alt_precomputed.py",
+    "src/routing/benchmark_ml_alt_compiled_rule.py",
+    "src/routing/benchmark_ml_alt_direct_tree.py",
+    "src/routing/benchmark_porto_heldout_alt.py",
+    "src/routing/build_class_weighted_graph.py",
+    "src/routing/build_conservative_refit_graph.py",
+    "src/routing/build_osm_weights.py",
+    "src/routing/compare_gps_od_routes.py",
+    "src/routing/create_heldout_porto_od.py",
+    "src/routing/diagnose_adaptive_alt_landmarks.py",
+    "src/routing/finalize_porto_alt_results.py",
+    "src/routing/prepare_routing_graph.py",
+    "src/routing/validate_alt_distance_gate.py",
+    "src/routing/validate_ml_alt_budget.py",
+    "src/routing/validate_ml_alt_compact_tree.py"
+  ],
+  "remove": [
+    "data/graphs/porto_drive_ml_weighted.graphml",
+    "data/processed/adaptive_alt_end_to_end_diagnostics.parquet",
+    "data/processed/adaptive_alt_runtime.parquet",
+    "data/processed/adaptive_alt_sensitivity_analysis.csv",
+    "data/processed/admissible_astar_benchmark.parquet",
+    "data/processed/admissible_astar_benchmark_meta.json",
+    "data/processed/alt_astar_benchmark.parquet",
+    "data/processed/alt_heuristic_diagnostics.parquet",
+    "data/processed/alt_landmark_scaling.parquet",
+    "data/processed/alt_target_precompute_benchmark.parquet",
+    "data/processed/alt_vectorized_benchmark.parquet",
+    "data/processed/astar_tiebreak_strategies.parquet",
+    "data/processed/class_astar_comparison.parquet",
+    "data/processed/class_weight_validation.parquet",
+    "data/processed/conservative_weight_validation.parquet",
+    "data/processed/edge_transition_diagnostics.parquet",
+    "data/processed/gps_overlap_bootstrap_draws.parquet",
+    "data/processed/gps_overlap_bootstrap_summary.csv",
+    "data/processed/gps_path_overlap_comparison.parquet",
+    "data/processed/gps_traversed_overlap_comparison.parquet",
+    "data/processed/ml_alt_budget_inference_cost.parquet",
+    "data/processed/ml_alt_gap_predictions.parquet",
+    "data/processed/ml_alt_tiebreak_comparison.parquet",
+    "data/processed/ml_edge_predictions.parquet",
+    "data/processed/ml_guided_astar_benchmark.parquet",
+    "data/processed/ml_interval_calibration_predictions.parquet",
+    "data/processed/ml_interval_features.parquet",
+    "data/processed/ml_multistep_routes.parquet",
+    "data/processed/ml_predictions_pilot.parquet",
+    "data/processed/ml_tiebreak_groupkfold.parquet",
+    "data/processed/ml_training_data.parquet",
+    "data/processed/nested_eta_validation.parquet",
+    "data/processed/repeated_route_baseline_validation.parquet",
+    "data/processed/research_results_summary.csv",
+    "data/processed/residential_sensitivity.parquet",
+    "data/processed/route_objective_comparison.parquet",
+    "data/processed/single_edge_samples_pilot.parquet",
+    "data/processed/transition_quality.parquet",
+    "src/data/check_edge_transitions.py",
+    "src/data/check_filtered_nearest_edges.py",
+    "src/data/check_gps_coverage.py",
+    "src/data/check_transition_quality.py",
+    "src/data/diagnose_transition_merge.py",
+    "src/data/diagnose_trip_coverage.py",
+    "src/data/inspect_edge_features.py",
+    "src/data/inspect_taxi.py",
+    "src/data/prepare_single_edge_samples.py",
+    "src/evaluation/__init__.py",
+    "src/features/__init__.py",
+    "src/ml/bootstrap_gps_overlap.py",
+    "src/ml/build_multistep_routes.py",
+    "src/ml/check_length_bias.py",
+    "src/ml/check_model_generalization.py",
+    "src/ml/check_sampling_bias.py",
+    "src/ml/compare_hmm_quality_filters.py",
+    "src/ml/diagnose_osm_interval_errors.py",
+    "src/ml/diagnose_route_road_classes.py",
+    "src/ml/diagnose_routing_weights.py",
+    "src/ml/inspect_hmm_outliers.py",
+    "src/ml/inspect_hmm_training_candidates.py",
+    "src/ml/inspect_interval_motion_regimes.py",
+    "src/ml/inspect_routing_model.py",
+    "src/ml/nested_eta_validation.py",
+    "src/ml/prepare_interval_features.py",
+    "src/ml/prepare_training_data.py",
+    "src/ml/summarize_research_results.py",
+    "src/ml/train_alt_gap_model.py",
+    "src/ml/train_catboost_pilot.py",
+    "src/ml/train_interval_calibration.py",
+    "src/ml/validate_class_weights.py",
+    "src/ml/validate_conservative_weights.py",
+    "src/ml/validate_distance_route_baselines.py",
+    "src/ml/validate_route_baselines_repeated.py",
+    "src/models/__init__.py",
+    "src/routing/analyze_adaptive_k_uncertainty.py",
+    "src/routing/analyze_alt_sensitivity.py",
+    "src/routing/astar.py",
+    "src/routing/benchmark_adaptive_alt_runtime.py",
+    "src/routing/benchmark_admissible_astar.py",
+    "src/routing/benchmark_alt_astar.py",
+    "src/routing/benchmark_alt_landmark_scaling.py",
+    "src/routing/benchmark_alt_target_precompute.py",
+    "src/routing/benchmark_alt_vectorized.py",
+    "src/routing/benchmark_astar_tiebreak_strategies.py",
+    "src/routing/benchmark_ml_alt_inference.py",
+    "src/routing/benchmark_ml_guided_astar.py",
+    "src/routing/build_ml_weights.py",
+    "src/routing/check_zero_length_edges.py",
+    "src/routing/compare_class_astar.py",
+    "src/routing/compare_gps_path_overlap.py",
+    "src/routing/compare_gps_traversed_overlap.py",
+    "src/routing/compare_route_objectives.py",
+    "src/routing/diagnose_alt_end_to_end.py",
+    "src/routing/diagnose_alt_heuristic.py",
+    "src/routing/diagnose_gps_overlap.py",
+    "src/routing/test_astar.py",
+    "src/routing/test_ml_alt_tiebreak.py",
+    "src/routing/test_residential_sensitivity.py",
+    "src/routing/validate_ml_tiebreak_groupkfold.py"
+  ],
+  "inventory": [
+    {
+      "path": "src/__init__.py",
+      "lines": 0,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/data/__init__.py",
+      "lines": 0,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/data/check_edge_transitions.py",
+      "lines": 82,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "networkx",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/edge_transition_diagnostics.parquet",
+        "data/processed/map_matching_clean.parquet"
+      ],
+      "sha256": "6a68370bf99afe140369d946cc7b0545c5694bfc50a11de596105202e2070aed"
+    },
+    {
+      "path": "src/data/check_filtered_nearest_edges.py",
+      "lines": 100,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pyproj"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet"
+      ],
+      "sha256": "fafd650f9c3293475c8d4527a52df189ec0310e0cc7a0ec335be7b14f152b8be"
+    },
+    {
+      "path": "src/data/check_gps_coverage.py",
+      "lines": 69,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "pyproj"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet"
+      ],
+      "sha256": "91cd04029e856c046ccb773a7a524307721f5288358564b5ea4b82af3256f886"
+    },
+    {
+      "path": "src/data/check_hmm_interval_quality.py",
+      "lines": 140,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/gps_intervals.parquet",
+        "data/processed/hmm_interval_quality.parquet",
+        "data/processed/hmm_pilot.parquet"
+      ],
+      "sha256": "235ac83cb8f6ed306c60f376424765b21a1fbb1c6f496eafb1356dd923fcbd00"
+    },
+    {
+      "path": "src/data/check_transition_quality.py",
+      "lines": 109,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/edge_transition_diagnostics.parquet",
+        "data/processed/gps_intervals.parquet",
+        "data/processed/transition_quality.parquet"
+      ],
+      "sha256": "1d615c81f530a19623bc3af46fea0bef5be9b69a745e7c0455083b64f9e9fb41"
+    },
+    {
+      "path": "src/data/clean_map_matching.py",
+      "lines": 89,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/map_matching_clean.parquet",
+        "data/processed/map_matching_pilot.parquet"
+      ],
+      "sha256": "a7667a2d644b191faefe1a47a714ef3ee753935e5abec4ed6220fd83b7cc9a9c"
+    },
+    {
+      "path": "src/data/diagnose_transition_merge.py",
+      "lines": 48,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "pandas"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/edge_transition_diagnostics.parquet",
+        "data/processed/gps_intervals.parquet"
+      ],
+      "sha256": "ca4be2b3c8108587fbae5ab2fe6b0d017291dc76a8e4f15c85a2aff2412b280c"
+    },
+    {
+      "path": "src/data/diagnose_trip_coverage.py",
+      "lines": 75,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet"
+      ],
+      "sha256": "5ef768fc4982b12b3ce916388e56aaa3387571201536baeefe105943c009439d"
+    },
+    {
+      "path": "src/data/download_graph.py",
+      "lines": 71,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "osmnx",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "main"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive.graphml"
+      ],
+      "sha256": "c96dc973b4aa86aed1fb98b8a6f97b8765217f24321550cc9151ca0aaf68c890"
+    },
+    {
+      "path": "src/data/extract_hmm_routes.py",
+      "lines": 199,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "functools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "edge_length",
+        "middle_path",
+        "extract_parts"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/hmm_pilot.parquet"
+      ],
+      "sha256": "4a0319f6a1a61f5ef26b57c020b3d067bfa3261a1df7c30ef947617069c6d31b"
+    },
+    {
+      "path": "src/data/fix_segments.py",
+      "lines": 91,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/gps_intervals.parquet",
+        "data/processed/map_matching_clean.parquet",
+        "data/processed/map_matching_segments_v2.parquet"
+      ],
+      "sha256": "191995c190ae252501f5f158d1cdfea0238df7ec15b4a3162f85400c1ab3c5c8"
+    },
+    {
+      "path": "src/data/hmm_map_matching.py",
+      "lines": 448,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "functools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "pyproj",
+        "shapely.geometry",
+        "shapely.strtree"
+      ],
+      "functions": [
+        "shortest_length",
+        "get_candidates",
+        "route_distance",
+        "emission_cost",
+        "transition_cost",
+        "save_fragment"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet",
+        "data/processed/hmm_pilot.parquet",
+        "data/processed/map_matching_segments_v2.parquet"
+      ],
+      "sha256": "e8f7d889b3c8727b2e4971fd5b37630629204f34ecee06a660eae645060f5635"
+    },
+    {
+      "path": "src/data/inspect_edge_features.py",
+      "lines": 82,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "osmnx",
+        "pandas"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml"
+      ],
+      "sha256": "d5ce36030c232024b04018a3a10443726c27464ace8a509f1feba5a8ee46b8bc"
+    },
+    {
+      "path": "src/data/inspect_taxi.py",
+      "lines": 32,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "argparse",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "main"
+      ],
+      "file_references": [
+        "data/raw/train.csv"
+      ],
+      "sha256": "1e363227bc2401386f4772a5cfa34a90edcc5e30777c19c381ba8a29f4c1d170"
+    },
+    {
+      "path": "src/data/map_matching_pilot.py",
+      "lines": 133,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "pyproj"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet",
+        "data/processed/map_matching_pilot.parquet"
+      ],
+      "sha256": "f5731ab9c32126728b591525f0facb72ed617a463984cc8b3de10e7ded23fd6b"
+    },
+    {
+      "path": "src/data/prepare_single_edge_samples.py",
+      "lines": 137,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/hmm_interval_quality.parquet",
+        "data/processed/single_edge_samples_pilot.parquet"
+      ],
+      "sha256": "513f2d624d366d2e6e77dd6bc6db63e8da3a218d5e2c16c5778b3ce1ed06432d"
+    },
+    {
+      "path": "src/data/prepare_trajectories.py",
+      "lines": 108,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "argparse",
+        "ast",
+        "json",
+        "math",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "parse_polyline",
+        "haversine_m",
+        "main"
+      ],
+      "file_references": [
+        "data/processed/gps_intervals.parquet",
+        "data/raw/train.csv"
+      ],
+      "sha256": "67e803ed7cb93e9115d9bc9665f5383531c5006b25eac45de6e12639ee129bee"
+    },
+    {
+      "path": "src/evaluation/__init__.py",
+      "lines": 0,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/features/__init__.py",
+      "lines": 0,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/ml/__init__.py",
+      "lines": 0,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/ml/bootstrap_gps_overlap.py",
+      "lines": 291,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "bootstrap_estimates"
+      ],
+      "file_references": [
+        "data/processed/gps_overlap_bootstrap_draws.parquet",
+        "data/processed/gps_overlap_bootstrap_summary.csv",
+        "data/processed/gps_traversed_overlap_comparison.parquet"
+      ],
+      "sha256": "6dec9adf043736273245d7bef10350453a629e4f92c5cf038e46fa5dc17c9999"
+    },
+    {
+      "path": "src/ml/build_distance_based_routes.py",
+      "lines": 163,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_backtracking_diagnostics.parquet",
+        "data/processed/ml_distance_based_routes.parquet"
+      ],
+      "sha256": "96f7eca30e597fd9c8758d5865f19bbe5b8b1552f9107b3665c793cf740ca192"
+    },
+    {
+      "path": "src/ml/build_multistep_routes.py",
+      "lines": 173,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_backtracking_diagnostics.parquet",
+        "data/processed/ml_multistep_routes.parquet"
+      ],
+      "sha256": "f0576ae5f21c29ba57ed15ed970ed18ea5bbf16d1fcf1bcb988e56e0aee18128"
+    },
+    {
+      "path": "src/ml/check_length_bias.py",
+      "lines": 143,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [
+        "evaluate_model"
+      ],
+      "file_references": [
+        "data/processed/ml_training_data.parquet"
+      ],
+      "sha256": "1b42539befa47900399fe0af4fc400e1d2620af2975ac8cecbdbeef9ec5bd351"
+    },
+    {
+      "path": "src/ml/check_model_generalization.py",
+      "lines": 124,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas"
+      ],
+      "functions": [
+        "summarize"
+      ],
+      "file_references": [
+        "data/processed/ml_predictions_pilot.parquet",
+        "data/processed/ml_training_data.parquet"
+      ],
+      "sha256": "2772a1f2313f23678db568ee545a420a63fb4c943c21b0d7b667c38cadf88bda"
+    },
+    {
+      "path": "src/ml/check_sampling_bias.py",
+      "lines": 147,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/ml_training_data.parquet"
+      ],
+      "sha256": "4e6b212a2eac0af43f961c1e536f9e7ade935c3bb092e348238c14d3edd0ec7d"
+    },
+    {
+      "path": "src/ml/compare_hmm_quality_filters.py",
+      "lines": 79,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_backtracking_diagnostics.parquet"
+      ],
+      "sha256": "b1c544256d3682a1eabf7a834c8046294bc8536e1ea45d63bf9f2a96eb623403"
+    },
+    {
+      "path": "src/ml/detect_hmm_backtracking.py",
+      "lines": 139,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_backtracking_diagnostics.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/osm_interval_validation.parquet"
+      ],
+      "sha256": "4704c2773f4eb35b499ecbb8e7c3280bd2fbc34d7df45e38d896e349b15f4861"
+    },
+    {
+      "path": "src/ml/diagnose_osm_interval_errors.py",
+      "lines": 113,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/osm_interval_validation.parquet"
+      ],
+      "sha256": "80620afb12a1c401725ecb9c13d78c83050a83978f13eda4f629083fdd20dcc8"
+    },
+    {
+      "path": "src/ml/diagnose_route_road_classes.py",
+      "lines": 160,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "ast",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "normalize_highway",
+        "road_group"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/ml_distance_based_routes.parquet"
+      ],
+      "sha256": "162661c79efca5b3821658aed5e43b23db3c26a9573eecec2cafdfc5628e28a0"
+    },
+    {
+      "path": "src/ml/diagnose_routing_weights.py",
+      "lines": 118,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_edge_predictions.parquet"
+      ],
+      "sha256": "5c43486d7ccefd80a3cb8f71d5fc43a49e8a1bb47dcf40a56298e9707a6eade3"
+    },
+    {
+      "path": "src/ml/inspect_hmm_outliers.py",
+      "lines": 60,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/osm_interval_validation.parquet"
+      ],
+      "sha256": "8a1b5c6eba6227d9b4f033c90185839b2b1ed0815d2d1b51168073c5d88df84a"
+    },
+    {
+      "path": "src/ml/inspect_hmm_training_candidates.py",
+      "lines": 95,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/hmm_interval_quality.parquet"
+      ],
+      "sha256": "2dc4faa91215c761455d4bdd6e809f7216dd522770e301534608d84df3b224a6"
+    },
+    {
+      "path": "src/ml/inspect_interval_motion_regimes.py",
+      "lines": 111,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/osm_interval_validation.parquet"
+      ],
+      "sha256": "06a3455057b13ec7dc28aa71948c1501ce449a5857954fd420f830d0561f5cc7"
+    },
+    {
+      "path": "src/ml/inspect_routing_model.py",
+      "lines": 54,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_training_data.parquet",
+        "models/catboost_speed_pilot.cbm"
+      ],
+      "sha256": "606c2aa727dbf0cbdf6e797cfb1cdd847269cf4971ed7844c188f291fc2355a6"
+    },
+    {
+      "path": "src/ml/nested_eta_validation.py",
+      "lines": 204,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "scipy.optimize",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [
+        "fit_model",
+        "predict"
+      ],
+      "file_references": [
+        "data/processed/ml_road_class_time_features.parquet",
+        "data/processed/nested_eta_validation.parquet"
+      ],
+      "sha256": "e4dee48f43b304ed0fcf02e65e1a8e7e04a48fed2d3e4ce996e8a0a4709f0f2f"
+    },
+    {
+      "path": "src/ml/prepare_interval_features.py",
+      "lines": 186,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "ast",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "highway_name",
+        "edge_attributes"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/processed/hmm_backtracking_diagnostics.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/ml_interval_features.parquet"
+      ],
+      "sha256": "6c94622dd4534fd7d5dc006b4b571db9d323713a81e34cbe09bfdd75cb89fb6c"
+    },
+    {
+      "path": "src/ml/prepare_interval_training_data.py",
+      "lines": 144,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/hmm_interval_quality.parquet",
+        "data/processed/ml_interval_training_data.parquet"
+      ],
+      "sha256": "48c32526bea8fae5dcf3536295e66100406426dd18dbd18d8d00f3271392b485"
+    },
+    {
+      "path": "src/ml/prepare_road_class_time_features.py",
+      "lines": 186,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "ast",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "normalize_highway",
+        "road_class"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/ml_distance_based_routes.parquet",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "8ef7fda76490ecf3fe256a74d24272670c08d81fcb7953ff21d5afe238e80c45"
+    },
+    {
+      "path": "src/ml/prepare_training_data.py",
+      "lines": 166,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "ast",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "re"
+      ],
+      "functions": [
+        "parse_numeric",
+        "parse_highway"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/processed/gps_intervals.parquet",
+        "data/processed/ml_training_data.parquet",
+        "data/processed/single_edge_samples_pilot.parquet"
+      ],
+      "sha256": "aa35f05f07676b7b60acc2914b5be5e1d28ffa41ec3e0e727ec3a40f564bee90"
+    },
+    {
+      "path": "src/ml/summarize_research_results.py",
+      "lines": 177,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "gps_od_route_comparison.parquet",
+        "gps_overlap_bootstrap_summary.csv",
+        "gps_traversed_overlap_comparison.parquet",
+        "nested_eta_validation.parquet",
+        "research_results_summary.csv"
+      ],
+      "sha256": "3aa6e3e2826f8ddbe7aa773375b0ccd00963b16f36b2818d83c4213469f4828e"
+    },
+    {
+      "path": "src/ml/train_alt_gap_model.py",
+      "lines": 255,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_heuristic_diagnostics.parquet",
+        "data/processed/ml_alt_gap_predictions.parquet"
+      ],
+      "sha256": "38daa90e1cdd35bd7b6e47703e03e40abf98eef127ccfde469f1dc55e645c9e0"
+    },
+    {
+      "path": "src/ml/train_catboost_pilot.py",
+      "lines": 171,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [
+        "evaluate"
+      ],
+      "file_references": [
+        "data/processed/ml_predictions_pilot.parquet",
+        "data/processed/ml_training_data.parquet",
+        "models/catboost_speed_pilot.cbm"
+      ],
+      "sha256": "4d485f38c9ce5c6551917399363919045a4175b2c557a11affa29210284222af"
+    },
+    {
+      "path": "src/ml/train_interval_calibration.py",
+      "lines": 147,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_interval_calibration_predictions.parquet",
+        "data/processed/ml_interval_features.parquet"
+      ],
+      "sha256": "0000a838ac5cfd72a4d678523c87204a27580edcabf2066f785a3bbf775c2576"
+    },
+    {
+      "path": "src/ml/validate_class_weights.py",
+      "lines": 174,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "scipy.optimize",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/class_weight_validation.parquet",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "634090bfb70bf0b2dcdd514b97cbea6530d8e2981cc57ca6c88d558595173355"
+    },
+    {
+      "path": "src/ml/validate_conservative_refit.py",
+      "lines": 239,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "scipy.optimize",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [
+        "fit_coefficients"
+      ],
+      "file_references": [
+        "data/processed/conservative_refit_validation.parquet",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "91b66d5f45a6177f3a505f288e23b88466979088b28ae6566cf4e1ba2b300bff"
+    },
+    {
+      "path": "src/ml/validate_conservative_weights.py",
+      "lines": 220,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "scipy.optimize",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/conservative_weight_validation.parquet",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "cfd790f0576d89c834d780a66dcf59623527224352d4a300531f282556b79368"
+    },
+    {
+      "path": "src/ml/validate_distance_route_baselines.py",
+      "lines": 113,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_distance_based_routes.parquet"
+      ],
+      "sha256": "bbb174848058ecf1d4753c8a788cde806e5158b425b0a1ee73515235a9081ef4"
+    },
+    {
+      "path": "src/ml/validate_osm_intervals.py",
+      "lines": 129,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "edge_speed"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/graphs/porto_drive_routing.graphml",
+        "data/processed/hmm_edge_traversals_pilot.parquet",
+        "data/processed/ml_interval_training_data.parquet",
+        "data/processed/osm_interval_validation.parquet"
+      ],
+      "sha256": "ea7da71f7fd7f3da62bf95d1c01d132f495c12f44b49a77abb2f5a108adc3044"
+    },
+    {
+      "path": "src/ml/validate_route_baselines_repeated.py",
+      "lines": 156,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_distance_based_routes.parquet",
+        "data/processed/repeated_route_baseline_validation.parquet"
+      ],
+      "sha256": "bc56256de2ea020408c473109cccf5c0b28c2805325242bf2c8ae49dd7de637b"
+    },
+    {
+      "path": "src/models/__init__.py",
+      "lines": 0,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/routing/__init__.py",
+      "lines": 0,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [],
+      "functions": [],
+      "file_references": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/routing/analyze_adaptive_k_uncertainty.py",
+      "lines": 94,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/adaptive_alt_precomputed_benchmark.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "858ccf2da25b56f8b5c7a89fc9d3d718b07a051adfe6548d0619030d066db0f8"
+    },
+    {
+      "path": "src/routing/analyze_alt_ml_opportunity.py",
+      "lines": 170,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/adaptive_alt_landmark_diagnostics.parquet",
+        "data/processed/adaptive_alt_ml_opportunity.parquet"
+      ],
+      "sha256": "5b3434eb858a7da91b81748152f0fef2b09adb3df36db6b294d73e48f5f169ec"
+    },
+    {
+      "path": "src/routing/analyze_alt_presearch_features.py",
+      "lines": 208,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "coords"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_ml_opportunity.parquet",
+        "data/processed/adaptive_alt_presearch_features.parquet"
+      ],
+      "sha256": "6402ca138e892edbada22803c5d78d30050020e3db22d454a47a1bf68d3d56be"
+    },
+    {
+      "path": "src/routing/analyze_alt_sensitivity.py",
+      "lines": 121,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/adaptive_alt_end_to_end_diagnostics.parquet",
+        "data/processed/adaptive_alt_sensitivity_analysis.csv"
+      ],
+      "sha256": "8a1a1068285ac3f4a48a4573b9247516702d831f6802ddd2cb6a9ffbf0cef779"
+    },
+    {
+      "path": "src/routing/analyze_porto_alt_workload.py",
+      "lines": 297,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "scenario",
+        "break_even"
+      ],
+      "file_references": [
+        "ml_alt_budget_groupkfold.parquet",
+        "porto_alt_workload_scenarios.csv",
+        "porto_heldout_600_od.parquet",
+        "porto_heldout_alt_benchmark.parquet"
+      ],
+      "sha256": "9c4457430278c2f1b01912d02bbccae34ea46ca01b6353a748e3cf12ebc6bcad"
+    },
+    {
+      "path": "src/routing/analyze_porto_heldout_alt.py",
+      "lines": 250,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/porto_heldout_alt_benchmark.parquet",
+        "data/processed/porto_heldout_alt_diagnostics.parquet"
+      ],
+      "sha256": "25279d58bd47c6e6cdc869fa8220312c891656e2c8976bebcbd873217dbc96f2"
+    },
+    {
+      "path": "src/routing/astar.py",
+      "lines": 57,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools"
+      ],
+      "functions": [
+        "astar_time",
+        "nx_node_error"
+      ],
+      "file_references": [],
+      "sha256": "6e7986ef15a96edf830711b23586112ffa94581090518db06fece6e597689a52"
+    },
+    {
+      "path": "src/routing/audit_porto_alt_robustness.py",
+      "lines": 237,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "porto_alt_robustness_audit.csv",
+        "porto_heldout_alt_benchmark.parquet"
+      ],
+      "sha256": "8aea89ad713f914f4ab2ac3d9a53ca5b20e133350703c73e9e66ed26e8be0f36"
+    },
+    {
+      "path": "src/routing/benchmark_adaptive_alt_end_to_end.py",
+      "lines": 558,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "collections",
+        "heapq",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "time"
+      ],
+      "functions": [
+        "air_distance_m",
+        "landmark_contributions",
+        "select_landmarks",
+        "build_heuristic",
+        "astar"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_end_to_end_benchmark.parquet",
+        "data/processed/adaptive_alt_landmarks.csv",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "df922dfa43d778a98b1498f7f253287ec64c36a03cd5dcb7344c172d9777bd27"
+    },
+    {
+      "path": "src/routing/benchmark_adaptive_alt_k.py",
+      "lines": 397,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "alt_value",
+        "rank_landmarks",
+        "astar",
+        "heuristic"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_k_benchmark.parquet",
+        "data/processed/adaptive_alt_landmarks.csv",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "1bfef73b335f62aeebd736af0d22028007831910999d99470c0545e82b7cc989"
+    },
+    {
+      "path": "src/routing/benchmark_adaptive_alt_precomputed.py",
+      "lines": 281,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "rank_landmarks",
+        "build_heuristic",
+        "astar"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_landmarks.csv",
+        "data/processed/adaptive_alt_precomputed_benchmark.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "d79ab0e9c515bf0d218cfc2c03708f5b1f3dfff7bece36e9bc6fa3786630125c"
+    },
+    {
+      "path": "src/routing/benchmark_adaptive_alt_runtime.py",
+      "lines": 388,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "alt_value",
+        "select_source_top4",
+        "astar",
+        "heuristic"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_runtime.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "c0038d32a46f84d9100959fb95a168f105d0a91b6cf998227abaf0dc95210a53"
+    },
+    {
+      "path": "src/routing/benchmark_admissible_astar.py",
+      "lines": 356,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "json",
+        "math",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "distance_m",
+        "shortest_path",
+        "h"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/admissible_astar_benchmark.parquet",
+        "data/processed/admissible_astar_benchmark_meta.json",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "39f0fa4a6e77700aa3b325c47b31b9d5d3a0962b946c1605d04896edfca0ff54"
+    },
+    {
+      "path": "src/routing/benchmark_alt_astar.py",
+      "lines": 405,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "math",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "geo_distance",
+        "alt_heuristic",
+        "shortest_path",
+        "h"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_astar_benchmark.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "ac1f7638029c83c57fcf37776796711e209f3631e8cdb18ce7d13e02cab39464"
+    },
+    {
+      "path": "src/routing/benchmark_alt_landmark_scaling.py",
+      "lines": 376,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "math",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "geo_distance",
+        "alt_h",
+        "search",
+        "h"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_landmark_scaling.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "8ba66a644e0c3e9e52f7d0625c7975e5eccd62d078b33693679de94271de1379"
+    },
+    {
+      "path": "src/routing/benchmark_alt_target_precompute.py",
+      "lines": 358,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "math",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "geo_distance",
+        "target_heuristic",
+        "astar"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_target_precompute_benchmark.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "1b5cbda8821b142876857021f00ccf0e7788e04995a15cb476c417e19ce50840"
+    },
+    {
+      "path": "src/routing/benchmark_alt_vectorized.py",
+      "lines": 459,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "math",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "geo_distance",
+        "make_heuristic",
+        "astar",
+        "h",
+        "heuristic",
+        "heuristic"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_vectorized_benchmark.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "31089bbaabeaec8522cdfd9fa09ec09be1d2fc4f706ec287f43fc9e9778ec11c"
+    },
+    {
+      "path": "src/routing/benchmark_astar_tiebreak_strategies.py",
+      "lines": 335,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "astar",
+        "push"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/astar_tiebreak_strategies.parquet",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/ml_alt_gap_predictions.parquet"
+      ],
+      "sha256": "334e9be65c5c9e9ebe204a993785c8c3d7b49182e660cb5973f4d2efda381e97"
+    },
+    {
+      "path": "src/routing/benchmark_ml_alt_compiled_rule.py",
+      "lines": 243,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "gc",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "sklearn.tree",
+        "time"
+      ],
+      "functions": [
+        "new_model",
+        "compile_tree",
+        "predict_compiled",
+        "predict_raw",
+        "compile_node"
+      ],
+      "file_references": [
+        "data/processed/ml_alt_budget_groupkfold.parquet",
+        "data/processed/ml_alt_compact_tree_validation.parquet",
+        "data/processed/ml_alt_compiled_rule_benchmark.parquet"
+      ],
+      "sha256": "6b5ca3bf3dea42c7cea58282b7c048b7558dbf1557e18b8b10ecc0576a4f7dc8"
+    },
+    {
+      "path": "src/routing/benchmark_ml_alt_direct_tree.py",
+      "lines": 314,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "sklearn.tree",
+        "time"
+      ],
+      "functions": [
+        "make_tree",
+        "predict_direct"
+      ],
+      "file_references": [
+        "data/processed/ml_alt_budget_groupkfold.parquet",
+        "data/processed/ml_alt_compact_tree_validation.parquet",
+        "data/processed/ml_alt_tree_inference_benchmark.parquet"
+      ],
+      "sha256": "39a7e6982b0f30a155d78b43843518ab1708ca271f49f7953c696eeef4827530"
+    },
+    {
+      "path": "src/routing/benchmark_ml_alt_inference.py",
+      "lines": 196,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.ensemble",
+        "time"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_alt_budget_groupkfold.parquet",
+        "data/processed/ml_alt_budget_inference_cost.parquet"
+      ],
+      "sha256": "b7df3c85eca41b24c1576cc41b490e25067a56f3ec679f7aaca31876c664f295"
+    },
+    {
+      "path": "src/routing/benchmark_ml_guided_astar.py",
+      "lines": 514,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "time"
+      ],
+      "functions": [
+        "add_features",
+        "astar_alt",
+        "astar_ml_guided",
+        "push"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_heuristic_diagnostics.parquet",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/ml_guided_astar_benchmark.parquet"
+      ],
+      "sha256": "418a3960a214f87a92b577154cc434c488e70ebfb29c9c64778ddd2807bc84b6"
+    },
+    {
+      "path": "src/routing/benchmark_porto_heldout_alt.py",
+      "lines": 573,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "gc",
+        "hashlib",
+        "heapq",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "sklearn.tree",
+        "time"
+      ],
+      "functions": [
+        "elapsed_ms",
+        "new_model",
+        "compile_node",
+        "predict_rule",
+        "haversine",
+        "source_scores",
+        "build_heuristic",
+        "astar",
+        "make_features"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_landmarks.csv",
+        "data/processed/ml_alt_budget_groupkfold.parquet",
+        "data/processed/porto_heldout_600_od.parquet",
+        "data/processed/porto_heldout_alt_benchmark.parquet"
+      ],
+      "sha256": "60c69a36d3e4da7bd306811ca2ed83ed541f46258633614612fb27ffafdeb1a7"
+    },
+    {
+      "path": "src/routing/build_class_weighted_graph.py",
+      "lines": 189,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "ast",
+        "json",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "scipy.optimize"
+      ],
+      "functions": [
+        "normalize_highway",
+        "road_class"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_class_weighted.graphml",
+        "data/graphs/porto_drive_routing.graphml",
+        "data/processed/class_weight_coefficients.json",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "0bdf153eb3df2efa70043be2f9d3a75a93ef863994190531b9d2e71079c7bacf"
+    },
+    {
+      "path": "src/routing/build_conservative_refit_graph.py",
+      "lines": 187,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "json",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "scipy.optimize"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_class_weighted.graphml",
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/conservative_refit_coefficients.json",
+        "data/processed/ml_road_class_time_features.parquet"
+      ],
+      "sha256": "5b15fb3a1a7602bb5826a72f450ce5b8c2b66bbda1c4be528bf48697e9561886"
+    },
+    {
+      "path": "src/routing/build_ml_weights.py",
+      "lines": 216,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "ast",
+        "catboost",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "first_value",
+        "parse_number",
+        "parse_maxspeed",
+        "parse_oneway"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_ml_weighted.graphml",
+        "data/graphs/porto_drive_routing.graphml",
+        "data/processed/ml_edge_predictions.parquet",
+        "models/catboost_speed_pilot.cbm"
+      ],
+      "sha256": "a1e6bbc3881d69be4cab7041f600afb23a102a1178853c014aee8979b42e0982"
+    },
+    {
+      "path": "src/routing/build_osm_weights.py",
+      "lines": 99,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "ast",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "normalize_highway",
+        "baseline_speed"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive.graphml",
+        "data/graphs/porto_drive_osm_weighted.graphml"
+      ],
+      "sha256": "6db8d18bc8f921daaf3ffaed77cb63d90da1e704cf79a1d9708e268edb40b48f"
+    },
+    {
+      "path": "src/routing/check_zero_length_edges.py",
+      "lines": 37,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "osmnx",
+        "pandas"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml"
+      ],
+      "sha256": "1f1d59901820528eed209f1149937f43ccfb529b74a8cab8289cbf33a63d211f"
+    },
+    {
+      "path": "src/routing/compare_class_astar.py",
+      "lines": 258,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "edge_cost",
+        "astar_weight",
+        "route_metrics",
+        "weight"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_class_weighted.graphml",
+        "data/processed/class_astar_comparison.parquet"
+      ],
+      "sha256": "4ff9738ab4559b1ec4340429efae8ece51e761216e1cd78c30f5d28847b00457"
+    },
+    {
+      "path": "src/routing/compare_gps_od_routes.py",
+      "lines": 349,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "weight_fn",
+        "evaluate_path",
+        "weight"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/hmm_pilot.parquet"
+      ],
+      "sha256": "1fa9cb1d2276717b0269c0060e8f92b11c0a417b50fad6e4ca2013cb66836103"
+    },
+    {
+      "path": "src/routing/compare_gps_path_overlap.py",
+      "lines": 234,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "edge_id",
+        "weight_fn",
+        "routed_edges",
+        "gps_edges_for_fragment",
+        "edge_length",
+        "gps_recall",
+        "weight"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/gps_path_overlap_comparison.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet"
+      ],
+      "sha256": "0790e5d28a13e2190f1941099d2509e5aa2e1e5d4bc7da9ecb07dc7d85cba0c8"
+    },
+    {
+      "path": "src/routing/compare_gps_traversed_overlap.py",
+      "lines": 272,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "edge_id",
+        "weight_fn",
+        "route_edge_set",
+        "weight"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/gps_path_overlap_comparison.parquet",
+        "data/processed/gps_traversed_overlap_comparison.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet"
+      ],
+      "sha256": "f5a59dfb1dadeba65ee2d68d14912f49d63ca96b64365662d65fb49c8ad90bbc"
+    },
+    {
+      "path": "src/routing/compare_route_objectives.py",
+      "lines": 252,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "geopandas",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "path_metrics"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_routing.graphml",
+        "data/processed/map_matching_segments_v2.parquet",
+        "data/processed/route_objective_comparison.parquet"
+      ],
+      "sha256": "5fe9622d1121c4d84d5a4af1e4092ce60bc9cd3f46f677aa69e6f4e5a9760a5d"
+    },
+    {
+      "path": "src/routing/create_heldout_porto_od.py",
+      "lines": 217,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "hashlib",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "haversine",
+        "distance_bin"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/porto_heldout_600_od.parquet"
+      ],
+      "sha256": "6e6415a4be091566071b031641e8fd3e00e200e0b80b4439885393f47e3b6cd4"
+    },
+    {
+      "path": "src/routing/diagnose_adaptive_alt_landmarks.py",
+      "lines": 586,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "contributions",
+        "target_heuristic",
+        "astar"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_landmark_diagnostics.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "1a3812fc727226c223f18f8e4afc6940fd917186e5f7c01149e003bc502148e6"
+    },
+    {
+      "path": "src/routing/diagnose_alt_end_to_end.py",
+      "lines": 149,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/adaptive_alt_end_to_end_benchmark.parquet",
+        "data/processed/adaptive_alt_end_to_end_diagnostics.parquet"
+      ],
+      "sha256": "4f96b511fac13906075ca68b0e6924e95bbe5b1a119050c1da86fe50db5ab411"
+    },
+    {
+      "path": "src/routing/diagnose_alt_heuristic.py",
+      "lines": 274,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "math",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "alt_heuristic"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_heuristic_diagnostics.parquet",
+        "data/processed/gps_od_route_comparison.parquet"
+      ],
+      "sha256": "980d5355b0b8511cb88e6eb2816f994f0dc9196fd43e9227d9f7a091b9181de8"
+    },
+    {
+      "path": "src/routing/diagnose_gps_overlap.py",
+      "lines": 119,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/hmm_edge_traversals_pilot.parquet"
+      ],
+      "sha256": "f3013576c5646825ce1c7d6e2f3008ac5fabfb26c4187f03be397490d731adea"
+    },
+    {
+      "path": "src/routing/finalize_porto_alt_results.py",
+      "lines": 359,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "hashlib",
+        "json",
+        "networkx",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sklearn"
+      ],
+      "functions": [
+        "markdown_table"
+      ],
+      "file_references": [
+        "porto_alt_final_summary.csv",
+        "porto_alt_reproducibility.json",
+        "porto_heldout_600_od.parquet",
+        "porto_heldout_alt_benchmark.parquet"
+      ],
+      "sha256": "f02099ebf0c570beef3939e91f13417f77a026da1b23ff21c3068746c99b0a57"
+    },
+    {
+      "path": "src/routing/prepare_routing_graph.py",
+      "lines": 45,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "osmnx",
+        "pathlib"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/graphs/porto_drive_osm_weighted.graphml",
+        "data/graphs/porto_drive_routing.graphml"
+      ],
+      "sha256": "2f1cbf05dc68f140c7bfc8e56b57a7150b66100e2ed8c6cebee26ecfa73899ce"
+    },
+    {
+      "path": "src/routing/test_astar.py",
+      "lines": 173,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "math",
+        "networkx",
+        "osmnx",
+        "random"
+      ],
+      "functions": [
+        "haversine_m",
+        "heuristic",
+        "route_cost",
+        "safe_heuristic"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_routing.graphml"
+      ],
+      "sha256": "56ed72b180be02029bd3b22c80cc57aa8803bcc4354729ddb2b779099ce990dd"
+    },
+    {
+      "path": "src/routing/test_ml_alt_tiebreak.py",
+      "lines": 252,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "time"
+      ],
+      "functions": [
+        "astar",
+        "push"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/ml_alt_gap_predictions.parquet",
+        "data/processed/ml_alt_tiebreak_comparison.parquet"
+      ],
+      "sha256": "e38b5298f4053bc5d214d9cb20a7bbb50c5276568b8c303f9e18670a3d317b59"
+    },
+    {
+      "path": "src/routing/test_residential_sensitivity.py",
+      "lines": 234,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib"
+      ],
+      "functions": [
+        "weight_function",
+        "route_metrics",
+        "weight"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_class_weighted.graphml",
+        "data/processed/class_astar_comparison.parquet",
+        "data/processed/residential_sensitivity.parquet"
+      ],
+      "sha256": "0a2f2713959f18fa6ba81c972c56e42970ed75b98af0e6d9e270ebc8109d7d42"
+    },
+    {
+      "path": "src/routing/validate_alt_distance_gate.py",
+      "lines": 287,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/adaptive_alt_distance_gate_validation.parquet",
+        "data/processed/adaptive_alt_precomputed_benchmark.parquet",
+        "data/processed/adaptive_alt_presearch_features.parquet"
+      ],
+      "sha256": "581b109524999f6662242452083fd1a495371b7bcde794f8967057c6df7a9591"
+    },
+    {
+      "path": "src/routing/validate_ml_alt_budget.py",
+      "lines": 343,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.ensemble",
+        "sklearn.model_selection"
+      ],
+      "functions": [
+        "air_distance",
+        "alt_scores"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/adaptive_alt_end_to_end_benchmark.parquet",
+        "data/processed/adaptive_alt_landmarks.csv",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/ml_alt_budget_groupkfold.parquet"
+      ],
+      "sha256": "a1a29e0c12b700acd0b4ab7d1d793ec2a4434bf222795f91df3ab7aa2e816019"
+    },
+    {
+      "path": "src/routing/validate_ml_alt_compact_tree.py",
+      "lines": 227,
+      "action": "keep",
+      "reason": "Article experiment, tuning, GPS provenance or table 2 calibration",
+      "imports": [
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "sklearn.tree"
+      ],
+      "functions": [],
+      "file_references": [
+        "data/processed/ml_alt_budget_groupkfold.parquet",
+        "data/processed/ml_alt_compact_tree_validation.parquet"
+      ],
+      "sha256": "b1500c53735bc9fd2fa5011d11a440ab66f679048e66065435b6e96afd56bd2e"
+    },
+    {
+      "path": "src/routing/validate_ml_tiebreak_groupkfold.py",
+      "lines": 472,
+      "action": "remove",
+      "reason": "Unused scaffold or alternative exploratory branch outside article dependency chain",
+      "imports": [
+        "catboost",
+        "heapq",
+        "itertools",
+        "networkx",
+        "numpy",
+        "osmnx",
+        "pandas",
+        "pathlib",
+        "sklearn.model_selection",
+        "time"
+      ],
+      "functions": [
+        "add_features",
+        "astar",
+        "push"
+      ],
+      "file_references": [
+        "data/graphs/porto_drive_conservative_refit.graphml",
+        "data/processed/alt_heuristic_diagnostics.parquet",
+        "data/processed/gps_od_route_comparison.parquet",
+        "data/processed/ml_tiebreak_groupkfold.parquet"
+      ],
+      "sha256": "ac8fdcc2a44a61a11f8ea28614facb33f76d83f354338ac5a341fa0aa286a635"
+    }
+  ]
+}

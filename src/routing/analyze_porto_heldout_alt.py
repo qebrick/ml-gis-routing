@@ -1,14 +1,11 @@
-﻿from pathlib import Path
+from src.paths import ROOT, DATA, benchmark_path, output_path
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-INPUT = Path(
-    "data/processed/porto_heldout_alt_benchmark.parquet"
-)
-OUTPUT = Path(
-    "data/processed/porto_heldout_alt_diagnostics.parquet"
-)
+INPUT = benchmark_path()
+OUTPUT = output_path("porto_heldout_alt_diagnostics.parquet")
 
 df = pd.read_parquet(INPUT)
 

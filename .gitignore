@@ -1,14 +1,17 @@
-data/raw/
-.idea/
-!__pycache__/
-*.py[cod]
+# Local environment and caches
 .venv/
+.idea/
+__pycache__/
+*.py[cod]
+.pytest_cache/
 .env
 .env.*
 !.env.example
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-data/graphs/*
-!data/graphs/.gitkeep
+
+# Raw taxi data are supplied separately; keep the placeholder visible.
+/data/raw/*
+!/data/raw/.gitkeep
+
+# Generated reports; published data/graphs and data/processed stay tracked.
+/reports/
+/catboost_info/

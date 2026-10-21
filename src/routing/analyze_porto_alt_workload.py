@@ -1,15 +1,16 @@
-﻿from pathlib import Path
+from src.paths import ROOT, DATA, benchmark_path, output_path
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-BASE = Path("data/processed")
-BENCH = BASE / "porto_heldout_alt_benchmark.parquet"
+BASE = DATA
+BENCH = benchmark_path()
 TEST = BASE / "porto_heldout_600_od.parquet"
 TRAIN = BASE / "ml_alt_budget_groupkfold.parquet"
 
-OUT = BASE / "porto_alt_workload_scenarios.csv"
-REPORT = Path("reports/porto_alt_workload_scenarios.md")
+OUT = output_path("porto_alt_workload_scenarios.csv")
+REPORT = output_path("porto_alt_workload_scenarios.md")
 
 B = 5000
 SEED = 20261016

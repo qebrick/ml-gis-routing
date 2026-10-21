@@ -1,11 +1,12 @@
-﻿from pathlib import Path
+from src.paths import ROOT, DATA, benchmark_path, output_path
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BASE = Path("data/processed")
-INPUT = BASE / "porto_heldout_alt_benchmark.parquet"
-OUTPUT = BASE / "porto_alt_robustness_audit.csv"
-REPORT = Path("reports/porto_alt_robustness_audit.md")
+BASE = DATA
+INPUT = benchmark_path()
+OUTPUT = output_path("porto_alt_robustness_audit.csv")
+REPORT = output_path("porto_alt_robustness_audit.md")
 
 df = pd.read_parquet(INPUT)
 

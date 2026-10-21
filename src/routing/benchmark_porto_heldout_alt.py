@@ -1,4 +1,5 @@
-﻿from pathlib import Path
+from src.paths import ROOT, DATA, benchmark_path, output_path
+from pathlib import Path
 from time import perf_counter_ns
 import hashlib
 import heapq
@@ -12,11 +13,11 @@ import pandas as pd
 from sklearn.model_selection import GroupKFold
 from sklearn.tree import DecisionTreeRegressor
 
-GRAPH = Path("data/graphs/porto_drive_conservative_refit.graphml")
-LANDMARKS = Path("data/processed/adaptive_alt_landmarks.csv")
-TRAIN = Path("data/processed/ml_alt_budget_groupkfold.parquet")
-TEST = Path("data/processed/porto_heldout_600_od.parquet")
-OUTPUT = Path("data/processed/porto_heldout_alt_benchmark.parquet")
+GRAPH = ROOT / "data/graphs/porto_drive_conservative_refit.graphml"
+LANDMARKS = DATA / "adaptive_alt_landmarks.csv"
+TRAIN = DATA / "ml_alt_budget_groupkfold.parquet"
+TEST = DATA / "porto_heldout_600_od.parquet"
+OUTPUT = output_path("porto_heldout_alt_benchmark.parquet")
 
 WEIGHT = "osm_travel_time_s"
 REPEATS = 3

@@ -1,4 +1,5 @@
-﻿from pathlib import Path
+from src.paths import ROOT, DATA, benchmark_path, output_path
+from pathlib import Path
 import hashlib
 import json
 import platform
@@ -8,13 +9,13 @@ import pandas as pd
 import networkx as nx
 import sklearn
 
-BASE = Path("data/processed")
-BENCH = BASE / "porto_heldout_alt_benchmark.parquet"
+BASE = DATA
+BENCH = benchmark_path()
 TEST = BASE / "porto_heldout_600_od.parquet"
 
-SUMMARY_OUT = BASE / "porto_alt_final_summary.csv"
-META_OUT = BASE / "porto_alt_reproducibility.json"
-REPORT_OUT = Path("reports/porto_adaptive_alt_results.md")
+SUMMARY_OUT = output_path("porto_alt_final_summary.csv")
+META_OUT = output_path("porto_alt_recalculation.json")
+REPORT_OUT = output_path("porto_adaptive_alt_results.md")
 
 STRATEGIES = ["alt2", "alt4", "distance_gate", "ml_tree"]
 REPEATS = 3
@@ -227,6 +228,9 @@ metadata = {
         "Reported inference costs depend on Python/NumPy implementation",
         "All 2400 strategy-route combinations verified against Dijkstra",
     ],
+    "environment_role": "statistics recalculation, not original routing measurement",
+    "benchmark_file": str(BENCH),
+    "benchmark_sha256": hashlib.sha256(BENCH.read_bytes()).hexdigest(),
     "environment": {
         "python": platform.python_version(),
         "pandas": pd.__version__,
@@ -285,9 +289,9 @@ distance-gate и ML-tree.
 - ML-tree: глубина 2, порог 25.
 - Distance-gate: порог 2914,709 м.
 - Параметры зафиксированы до оценки на новых OD.
-- Все маршруты проверены на оптимальность против Dijkstra.
-- ALT preprocessing: 679,277 мс в одном измерении, исключено
-  из времени отдельных запросов.
+- Исходный протокол включает проверку против Dijkstra; этот пересчёт статистики её не повторяет.
+- Предварительный расчёт ALT исключён из времени запросов;
+  данный сценарий его заново не измеряет.
 - SHA-256 тестовой выборки: `{digest}`.
 
 ## End-to-end результаты

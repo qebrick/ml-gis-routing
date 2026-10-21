@@ -1,0 +1,11 @@
+# Versions verified in the local environment during cleanup (2026-10-21).
+# This is not a claim that all versions were recorded in the original experiment.
+numpy==2.5.4
+pandas==3.0.6
+pyarrow==26.0.0
+networkx==3.7
+osmnx==2.1.1
+scikit-learn==1.9.1
+scipy==1.18.1
+shapely==2.2.0
+pyproj==3.8.0
